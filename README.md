@@ -1,5 +1,21 @@
 # Secret Santa
 
+A web app using Python + React for a group of friends to allocate secret santa.
+
+## Building Docker container
+
+```sh
+docker build -t secret-santa .
+```
+
+## Running Docker container
+
+This can also be used to deploy your app to production.
+
+```sh
+docker run -p 5000:5000 secret-santa
+```
+
 ## Running Locally
 
 ```sh
