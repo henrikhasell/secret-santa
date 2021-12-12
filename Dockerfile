@@ -10,7 +10,7 @@ FROM python:3.10
 
 WORKDIR /application
 
-COPY --from=0 build ./secret_santa/build
+COPY --from=0 /application/build ./secret_santa/web/build
 COPY requirements.txt src ./
 
 RUN pip install --upgrade pip
