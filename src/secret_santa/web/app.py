@@ -22,4 +22,9 @@ def index(route="index.html"):
     return send_from_directory("build", route)
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return index()
+
+
 app.register_blueprint(api_blueprint, url_prefix="/santa/api")
