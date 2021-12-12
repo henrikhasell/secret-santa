@@ -4,8 +4,11 @@ WORKDIR /application
 
 COPY ui ./
 RUN npm install
+RUN NODE_OPTIONS=--openssl-legacy-provider npm run build
 
 FROM python:3.10
+
+WORKDIR /application
 
 COPY --from=0 build ./secret_santa/build
 COPY requirements.txt src ./
